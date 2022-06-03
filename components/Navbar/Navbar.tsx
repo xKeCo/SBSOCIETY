@@ -1,0 +1,112 @@
+import { useEffect, useState } from "react";
+import Image from "next/image";
+
+// Styles
+import s from "./Navbar.module.css";
+// Images and SVGs
+import menuAlt from "../../public/MenuAlt.svg";
+
+// Fixed Navbar on Scroll
+function Navbar() {
+  const [fix, setFix] = useState(false);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    // Get the height of the navbar
+    const setNewHeight = () => {
+      // Get the height of the navbar
+      const navbarHeight = document.querySelector(
+        `.${s.bigNavbar__title}`
+      )?.clientHeight;
+      navbarHeight && setHeight(navbarHeight);
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY >= height) {
+        setFix(true);
+      } else {
+        setFix(false);
+      }
+    };
+
+    setNewHeight();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", setNewHeight);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", setNewHeight);
+    };
+  }, [height]);
+
+  return (
+    <>
+      {/* Small Screen */}
+      <div className={s.navbar}>
+        <div className={s.navbar__image__container}>
+          <img
+            src="/SBSOCIETY600.svg"
+            alt="SBSOCIETY"
+            className={s.navbar__image}
+            width="100%"
+          />
+        </div>
+        <Image src={menuAlt} width={30} height={30} />
+      </div>
+
+      {/* Big Screen */}
+      <div className={s.bigNavbar}>
+        <div className={s.bigNavbar__title}>
+          <img src="SBSOCIETY.svg" alt="SBSOCIETY" width="100%" />
+        </div>
+        <div
+          id="navbar"
+          className={
+            fix ? `${s.bigNavbar__nav} ${s.bigNavbar__fixed}` : s.bigNavbar__nav
+          }
+        >
+          <div
+            className={
+              fix
+                ? `${s.bigNavbar__nav__image__container} ${s.nav__image__fixed}`
+                : s.bigNavbar__nav__image__container
+            }
+          >
+            <img
+              src="/SBSOCIETY600.svg"
+              alt="SBSOCIETY"
+              width="100%"
+              className={s.bigNavbar__nav__image}
+            />
+          </div>
+          <nav role="navigation" className={s.bigNavbar__nav__links}>
+            <a href="#" className={s.bigNavbar__nav__links__link}>
+              Shop
+            </a>
+            <a href="#" className={s.bigNavbar__nav__links__link}>
+              Not About Us
+            </a>
+            <a href="#" className={s.bigNavbar__nav__links__link}>
+              Not Contact
+            </a>
+          </nav>
+          <div className={s.bigNavbar__nav__buttons}>
+            <div
+              className={`${s.button1} ${s.bigNavbar__nav__buttons__button}`}
+            >
+              Login
+            </div>
+            <div
+              className={`${s.button2} ${s.bigNavbar__nav__buttons__button}`}
+            >
+              Sign up
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Navbar;
