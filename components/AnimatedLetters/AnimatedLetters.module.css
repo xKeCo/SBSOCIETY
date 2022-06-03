@@ -1,0 +1,29 @@
+.banner_row {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.row-col {
+  width: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.row_title,
+.row_letter {
+  font-size: 6rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 550px) {
+  .row_title,
+  .row_letter {
+    font-size: 3.5rem;
+    font-weight: 500;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}

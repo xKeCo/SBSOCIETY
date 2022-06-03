@@ -11,6 +11,7 @@ function Navbar() {
   const [fix, setFix] = useState(false);
   const [height, setHeight] = useState(0);
 
+  // Set height of navbar
   useEffect(() => {
     // Get the height of the navbar
     const setNewHeight = () => {
@@ -56,49 +57,44 @@ function Navbar() {
       </div>
 
       {/* Big Screen */}
+      <div className={s.bigNavbar__title}>
+        <img src="SBSOCIETY.svg" alt="SBSOCIETY" width="100%" />
+      </div>
       <div className={s.bigNavbar}>
-        <div className={s.bigNavbar__title}>
-          <img src="SBSOCIETY.svg" alt="SBSOCIETY" width="100%" />
-        </div>
-        <div
-          id="navbar"
-          className={
-            fix ? `${s.bigNavbar__nav} ${s.bigNavbar__fixed}` : s.bigNavbar__nav
-          }
-        >
+        <div id="navbar" className={s.bigNavbar__content}>
           <div
             className={
               fix
-                ? `${s.bigNavbar__nav__image__container} ${s.nav__image__fixed}`
-                : s.bigNavbar__nav__image__container
+                ? `${s.bigNavbar__content__image__container} ${s.nav__image__fixed}`
+                : s.bigNavbar__content__image__container
             }
           >
             <img
               src="/SBSOCIETY600.svg"
               alt="SBSOCIETY"
               width="100%"
-              className={s.bigNavbar__nav__image}
+              className={s.bigNavbar__content__image}
             />
           </div>
-          <nav role="navigation" className={s.bigNavbar__nav__links}>
-            <a href="#" className={s.bigNavbar__nav__links__link}>
+          <nav role="navigation" className={s.bigNavbar__content__links}>
+            <a href="#" className={s.bigNavbar__content__links__link}>
               Shop
             </a>
-            <a href="#" className={s.bigNavbar__nav__links__link}>
+            <a href="#" className={s.bigNavbar__content__links__link}>
               Not About Us
             </a>
-            <a href="#" className={s.bigNavbar__nav__links__link}>
+            <a href="#" className={s.bigNavbar__content__links__link}>
               Not Contact
             </a>
           </nav>
-          <div className={s.bigNavbar__nav__buttons}>
+          <div className={s.bigNavbar__content__buttons}>
             <div
-              className={`${s.button1} ${s.bigNavbar__nav__buttons__button}`}
+              className={`${s.button1} ${s.bigNavbar__content__buttons__button}`}
             >
               Login
             </div>
             <div
-              className={`${s.button2} ${s.bigNavbar__nav__buttons__button}`}
+              className={`${s.button2} ${s.bigNavbar__content__buttons__button}`}
             >
               Sign up
             </div>

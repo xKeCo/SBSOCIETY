@@ -1,8 +1,12 @@
 /* Navbar Big Screen */
 
 .bigNavbar {
-  display: none;
+  display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
+  z-index: 1;
   transition: all 0.2s ease-out;
 }
 
@@ -20,7 +24,7 @@
   transition: all 0.2s ease-out;
 }
 
-.bigNavbar__nav__image__container {
+.bigNavbar__content__image__container {
   max-width: 120px;
   display: none;
   align-items: center;
@@ -32,18 +36,19 @@
   transition: all 0.2s ease-out;
 }
 
-.bigNavbar__nav {
+.bigNavbar__content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   border-bottom: 2px solid #000;
-  background-color: #fff;
+
   padding-left: 2vw;
   transition: all 0.2s ease-out;
 }
 
-.bigNavbar__nav__links {
+.bigNavbar__content__links {
   display: flex;
   flex-direction: row;
   gap: 2vw;
@@ -51,11 +56,11 @@
   transition: all 0.2s ease-out;
 }
 
-.bigNavbar__nav__links__link {
+.bigNavbar__content__links__link {
   position: relative;
 }
 
-.bigNavbar__nav__links__link::before {
+.bigNavbar__content__links__link::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -68,23 +73,23 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.bigNavbar__nav__links__link:hover::before {
+.bigNavbar__content__links__link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
 
-.bigNavbar__nav__buttons {
+.bigNavbar__content__buttons {
   display: flex;
   flex-direction: row;
 }
 
-.bigNavbar__nav__buttons__button {
+.bigNavbar__content__buttons__button {
   border: none;
   cursor: pointer;
   padding: 1.5rem 3.5rem;
 }
 
-.bigNavbar__nav__buttons__button:hover {
+.bigNavbar__content__buttons__button:hover {
   background-color: #ff90e7;
 }
 
@@ -109,6 +114,7 @@
   position: sticky;
   top: 0;
   background-color: #fff;
+  z-index: 1;
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -134,10 +140,10 @@
   .navbar {
     display: flex;
   }
-}
-
-@media (min-width: 991px) {
+  .bigNavbar__title {
+    display: none;
+  }
   .bigNavbar {
-    display: flex;
+    display: none;
   }
 }

@@ -2,8 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
+import { motion } from "framer-motion";
+
 // Local Components
 import Navbar from "../components/Navbar/Navbar";
+import AnimatedLetters from "../components/AnimatedLetters/AnimatedLetters";
 
 // Styles
 import s from "../styles/Home.module.css";
@@ -19,7 +22,63 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className={s.main}></main>
+        <main className={s.main}>
+          <section className={s.promo}>
+            <div className={s.promo__details}>
+              <AnimatedLetters title="Brownie" />
+              <AnimatedLetters title="#54" />
+              <motion.div
+                initial={{ opacity: 0, y: 80 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 1,
+                  delay: 0.4,
+                }}
+                className="row-col"
+              >
+                <p>
+                  Made w/ special fruits that will gonna make u fly
+                  &quot;Gui&ntilde;o Gui&ntilde;o&quot;
+                </p>
+              </motion.div>
+            </div>
+            <div className={s.promo__image}>
+              <motion.div
+                initial={{ opacity: 0, y: 80 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 1,
+                  delay: 0.4,
+                }}
+                className={s.promo__img__container}
+              >
+                <img src="/brownie.png" alt="image" width="100%" />
+              </motion.div>
+            </div>
+          </section>
+          <div className={s.slogan}>
+            <div className={s.slogan__text}>
+              <h1>
+                <span>A Good Day</span>
+                <span>To Have</span>
+                <span>A Good Day</span>
+                <span>To Have</span>
+                <span>A Good Day</span>
+              </h1>
+            </div>
+            <div className={`${s.slogan__text} ${s.slogan__text2}`}>
+              <h1>
+                <span>A Good Day</span>
+                <span>To Have</span>
+                <span>A Good Day</span>
+                <span>To Have</span>
+                <span>A Good Day</span>
+              </h1>
+            </div>
+          </div>
+        </main>
 
         <footer className={s.footer}>
           <a
