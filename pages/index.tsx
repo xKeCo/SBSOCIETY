@@ -65,13 +65,10 @@ const Home: NextPage = () => {
                 <span>To Have</span>
                 <span>A Good Day</span>
                 <span>To Have</span>
-                <span>A Good Day</span>
               </h1>
             </div>
             <div className={`${s.slogan__text} ${s.slogan__text2}`}>
               <h1>
-                <span>A Good Day</span>
-                <span>To Have</span>
                 <span>A Good Day</span>
                 <span>To Have</span>
                 <span>A Good Day</span>

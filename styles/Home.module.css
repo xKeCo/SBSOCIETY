@@ -53,11 +53,12 @@
   height: 60px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .slogan__text h1 {
   margin: 0;
 }
-.slogan__text h1 span {
+.slogan__text span {
   font-weight: 500;
   color: #ff90e7;
 }
@@ -67,8 +68,8 @@
   padding-left: 100%;
   animation: marquee 30s linear infinite;
   white-space: nowrap;
-  position: absolute;
   overflow: hidden;
+  position: absolute;
 }
 
 .slogan__text2 {
@@ -83,6 +84,7 @@
     transform: translate(-100%, 0);
   }
 }
+
 .slogan__text span::after {
   content: " ";
 }
@@ -143,5 +145,11 @@
 @media screen and (max-width: 550px) {
   .promo__img__container {
     max-width: 300px;
+  }
+  .slogan__text2 {
+    display: none;
+  }
+  .slogan__text {
+    animation: marquee 15s linear infinite;
   }
 }
