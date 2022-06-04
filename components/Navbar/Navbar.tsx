@@ -53,7 +53,7 @@ function Navbar() {
             width="100%"
           />
         </div>
-        <Image src={menuAlt} width={30} height={30} />
+        <Image src={menuAlt} alt="Menu" width={30} height={30} />
       </div>
 
       {/* Big Screen */}
