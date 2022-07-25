@@ -5,6 +5,7 @@ import Image from "next/image";
 import s from "./Navbar.module.css";
 // Images and SVGs
 import menuAlt from "../../public/MenuAlt.svg";
+import Link from "next/link";
 
 // Fixed Navbar on Scroll
 function Navbar() {
@@ -88,11 +89,13 @@ function Navbar() {
             </a>
           </nav>
           <div className={s.bigNavbar__content__buttons}>
-            <div
-              className={`${s.button1} ${s.bigNavbar__content__buttons__button}`}
-            >
-              Login
-            </div>
+            <Link href="/login">
+              <div
+                className={`${s.button1} ${s.bigNavbar__content__buttons__button}`}
+              >
+                Login
+              </div>
+            </Link>
             <div
               className={`${s.button2} ${s.bigNavbar__content__buttons__button}`}
             >

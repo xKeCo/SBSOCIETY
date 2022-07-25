@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 
 import { motion } from "framer-motion";
 
@@ -18,7 +16,7 @@ const Home: NextPage = () => {
     <>
       <Navbar />
       <div className={s.container}>
-        <SEO title="SBS - Makes u fly" />
+        <SEO title="SBS | Makes u fly" />
 
         <main className={s.main}>
           <section className={s.promo}>
